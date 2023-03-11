@@ -1,12 +1,8 @@
-import { FunctionComponent, ReactElement, useState } from 'react'
+import { useState } from 'react'
 
-type CardProps = {
-  title: string,
-  paragraph?: string
-}
 
-const ShopPage: FunctionComponent<CardProps> = ({ title }) =>  {
-  return <div>{title}</div>
+const ShopPage = () =>  {
+  return <div>Shop</div>
 }
 
 export default ShopPage;

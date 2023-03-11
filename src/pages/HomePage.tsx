@@ -1,22 +1,30 @@
-import { FunctionComponent } from 'react'
 import styled from 'styled-components';
+import { Link } from 'react-router-dom'
 
-type CardProps = {
-  title: string,
-  paragraph?: string
-}
-
-const HomePage: FunctionComponent<CardProps> = ({ title }) =>  {
+const HomePage = () =>  {
   return (
-  <Wrapper>
-    {title}
-  </Wrapper>
+    <MainWrapper>
+      Welcome to the WebStore!
+    </MainWrapper>
   )
 }
 
 const Wrapper = styled.section`
-  padding: 4em;
-  background-color: papayawhip;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: 1024px) {
+    justify-content: center;
+  }
+  @media (max-width: 768px) {
+    margin-top: 1rem;
+  }
 `;
+const MainWrapper = styled.main`
+  max-width: ${({ theme }) => theme.widths.content};
+  margin: 0 auto;
+  padding: 4rem;
+`
 
 export default HomePage;
