@@ -30,7 +30,7 @@ const Container = styled.div`
   width: 100vw;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 0 auto;
   padding: 4rem;
 
@@ -42,7 +42,7 @@ const Container = styled.div`
 
 const Logo = styled.h1`
   color: ${({ theme }) => theme.colors.primary};
-  font-size: 6rem;
+  font-size: 8rem;
 `
 
 const Navbar = styled.nav`
