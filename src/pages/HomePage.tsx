@@ -4,17 +4,20 @@ import homepageImage from '../assets/homepage-image.png'
 
 const HomePage = () => {
   return (
-    <HomeWrapper>
-      <Message>
-        <BigMessage>Find anything you ever wanted...</BigMessage>
-        <Link to={'/shop'}>
-          <button>
-            Shop now!
-          </button>
-        </Link>
-      </Message>
-      <Image src={homepageImage} alt="people"></Image>
-    </HomeWrapper>
+    <>
+      <HomeWrapper>
+        <Message>
+          <BigMessage>Find the products of your dreams...</BigMessage>
+          <Link to={'/shop'}>
+            <Button>
+              Shop now!
+            </Button>
+          </Link>
+        </Message>
+        <Image src={homepageImage} alt="people"></Image>
+      </HomeWrapper>
+      <Footer>Copyright © 2023 Shaheer Amjad</Footer>
+    </>
   )
 }
 
@@ -97,6 +100,17 @@ const Image = styled.img`
   @media (max-width: 600px) {
     top: 25rem;
   }
+`
+
+const Button = styled.button`
+  font-size: 3rem;
+`
+
+const Footer = styled.footer`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
 `
 
 export default HomePage;

@@ -5,7 +5,7 @@ import {
   Outlet,
   RouterProvider,
 } from 'react-router-dom';
-import { Provider } from 'react-redux';
+import { Provider as ReduxProvider } from 'react-redux';
 import store from './store';
 
 import GlobalStyle from '../assets/GlobalStyle'
@@ -28,7 +28,12 @@ const router = createBrowserRouter([
         <Outlet/>
       </>
     ),
-    errorElement: <ErrorPage />,
+    errorElement: (
+      <>
+        <NavBar />
+        <ErrorPage />
+      </>
+    ),
     children: [
       {
         path: "/",
@@ -50,9 +55,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <ThemeProvider theme={Theme}>
       <GlobalStyle />
-      <Provider store={store}>
+      <ReduxProvider store={store}>
         <RouterProvider router={router} />
-      </Provider>
+      </ReduxProvider>
     </ThemeProvider>
   </React.StrictMode>,
 )

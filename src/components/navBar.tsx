@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Link, Outlet } from 'react-router-dom'
 import { FaShoppingCart } from 'react-icons/fa'
-import React from "react";
 
 function NavBar () {
   return (
@@ -14,7 +13,9 @@ function NavBar () {
           <NavbarLink to={'/'}>Home</NavbarLink>
           <NavbarLink to={'/shop'}>Products</NavbarLink>
           <ButtonContainer>
-            <FaShoppingCart />
+            <Link to={'/cart'}>
+              <FaShoppingCart />
+            </Link>
           </ButtonContainer>
         </Navbar>
       </Container>
@@ -50,7 +51,7 @@ const Navbar = styled.nav`
   align-items: center;
   justify-content: space-between;
   gap: 7rem;
-  font-size: 2.4rem;
+  font-size: 3rem;
 
   @media (max-width: 480px) {
     gap: 0;
